@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="A bright, color-coded Week 1 newborn schedule inspired by Cherish the First Six Weeks." />
+    <meta name="description" content="Bright, color-coded newborn schedules for Weeks 1–6, inspired by Cherish the First Six Weeks." />
     <title>Cherish · Daily Schedule · Week 1</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=2" />
   </head>
   <body>
     <svg class="svg-library" aria-hidden="true">
@@ -34,12 +34,24 @@
           <span class="ribbon-fold right" aria-hidden="true"></span>
         </header>
 
+        <nav class="week-nav no-print" aria-label="Choose a week">
+          <span>Choose week</span>
+          <div>
+            <button type="button" data-week="1">1</button>
+            <button type="button" data-week="2">2</button>
+            <button type="button" data-week="3">3</button>
+            <button type="button" data-week="4">4</button>
+            <button type="button" data-week="5">5</button>
+            <button type="button" data-week="6">6</button>
+          </div>
+        </nav>
+
         <div class="poster-grid">
           <aside class="principles" aria-labelledby="principles-title">
             <div class="baby-badge" aria-hidden="true"><svg><use href="#icon-heart" /></svg></div>
-            <p class="aside-kicker">The goal</p>
+            <p class="aside-kicker" id="themeKicker">The goal</p>
             <h2 id="principles-title">A simple rhythm</h2>
-            <ol>
+            <ol id="principlesList">
               <li><span>01</span><p><strong>Day feels like day</strong>Light and normal household sounds.</p></li>
               <li><span>02</span><p><strong>Feed every 2–3 hours</strong>Follow hunger cues and your clinician’s plan.</p></li>
               <li><span>03</span><p><strong>Feed, care, sleep</strong>Keep awake time brief and gentle.</p></li>
@@ -53,12 +65,12 @@
           <section class="day-panel" aria-labelledby="day-title">
             <header class="panel-header day-header">
               <div class="panel-icon"><svg><use href="#icon-sun" /></svg></div>
-              <div><p>Daytime cycle</p><h2 id="day-title">7 am–10 pm</h2></div>
-              <div class="panel-stat"><strong>3</strong><span>hour rhythm</span></div>
+              <div><p id="dayLabel">Daytime cycle</p><h2 id="day-title">7 am–10 pm</h2></div>
+              <div class="panel-stat" id="panelStat"><strong>3</strong><span>hour rhythm</span></div>
             </header>
             <div class="repeat-line"><span>Start</span><i></i><strong>repeat through the day</strong><i></i><span>Night</span></div>
 
-            <div class="schedule" aria-label="Sample daytime schedule">
+            <div class="schedule" id="schedule" aria-label="Sample daytime schedule">
               <article class="schedule-row">
                 <div class="row-time"><strong>7</strong><span>am</span></div>
                 <div class="row-cycle">
@@ -110,17 +122,17 @@
           <aside class="night-panel" aria-labelledby="night-title">
             <header class="panel-header night-header">
               <div class="panel-icon"><svg><use href="#icon-moon" /></svg></div>
-              <div><p>Nighttime</p><h2 id="night-title">10 pm–7 am</h2></div>
+              <div><p id="nightLabel">Nighttime</p><h2 id="night-title">10 pm–7 am</h2></div>
             </header>
-            <div class="dream-feed">
+            <div class="dream-feed" id="nightAnchor">
               <span class="dream-time">10:00 <small>pm</small></span>
               <div><strong>Feed</strong><p>Begin the overnight rhythm</p></div>
             </div>
-            <div class="night-rule">
+            <div class="night-rule" id="nightRule">
               <strong>Continue feeding every 2–3 hours</strong>
               <p>Feed sooner when baby shows hunger cues. Don’t try to stretch sleep in week one.</p>
             </div>
-            <ul class="night-list">
+            <ul class="night-list" id="nightList">
               <li><svg><use href="#icon-lamp" /></svg><p><strong>Keep lights low</strong>Help distinguish night from day.</p></li>
               <li><svg><use href="#icon-heart" /></svg><p><strong>Keep care quiet</strong>Feed, burp, change if needed.</p></li>
               <li><svg><use href="#icon-crib" /></svg><p><strong>Back to safe sleep</strong>On baby’s back, firm flat surface, clear crib.</p></li>
@@ -130,14 +142,14 @@
         </div>
 
         <section class="bottom-band" aria-label="Week one reminders">
-          <div class="number-block"><strong>8–12</strong><span>feeds in 24 hours is common</span></div>
-          <p><strong>Responsive, not rigid.</strong> This visual uses a 3-hour sample cadence. A newborn may need to feed closer to every 2 hours.</p>
-          <p><strong>Parent care belongs in the schedule.</strong> When baby sleeps, prioritize rest, food, water, and accepting help.</p>
+          <div class="number-block" id="numberBlock"><strong>8–12</strong><span>feeds in 24 hours is common</span></div>
+          <p id="bottomNoteOne"><strong>Responsive, not rigid.</strong> This visual uses a 3-hour sample cadence. A newborn may need to feed closer to every 2 hours.</p>
+          <p id="bottomNoteTwo"><strong>Parent care belongs in the schedule.</strong> When baby sleeps, prioritize rest, food, water, and accepting help.</p>
           <button class="print-button no-print" type="button" id="printButton"><svg><use href="#icon-print" /></svg>Print / save PDF</button>
         </section>
 
         <footer class="footer">
-          <p>Visual companion based on the publicly available Week 1 summary of Helen Moon’s book. Follow your pediatrician’s feeding plan, especially for premature babies, jaundice, weight concerns, or other medical needs.</p>
+          <p>Visual companion based on publicly available week-by-week schedule details from Helen Moon’s book. Follow your pediatrician’s feeding plan, especially for premature babies, jaundice, weight concerns, or other medical needs.</p>
           <div class="source-links no-print">
             <a href="https://www.penguinrandomhouse.com/books/218564/cherish-the-first-six-weeks-by-helen-moon/" target="_blank" rel="noreferrer">Book ↗</a>
             <a href="https://www.healthychildren.org/English/ages-stages/prenatal/delivery-beyond/Pages/Bringing-Baby-Home.aspx" target="_blank" rel="noreferrer">AAP newborn guide ↗</a>
@@ -145,6 +157,6 @@
         </footer>
       </section>
     </main>
-    <script src="script.js"></script>
+    <script src="script.js?v=2"></script>
   </body>
 </html>

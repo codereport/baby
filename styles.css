@@ -49,6 +49,20 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round
 .title-ribbon h1 { align-self: center; font-size: clamp(2.1rem,3.1vw,3.2rem); line-height: 1; text-transform: uppercase; }
 .title-ribbon p:last-child { flex: 0 0 100%; font-size: .82rem; font-weight: 650; opacity: .86; }
 
+.week-nav {
+  display: flex; align-items: center; justify-content: center; gap: 13px; position: relative; z-index: 4;
+  margin: -7px auto 15px; color: var(--teal-dark); font-size: .64rem; font-weight: 900;
+  letter-spacing: .1em; text-transform: uppercase;
+}
+.week-nav > div { display: flex; gap: 6px; }
+.week-nav button {
+  display: grid; width: 31px; height: 31px; padding: 0; place-items: center; border: 1px solid var(--line);
+  border-radius: 50%; color: var(--navy); background: var(--white); cursor: pointer; font-weight: 900;
+  transition: 150ms ease;
+}
+.week-nav button:hover { border-color: var(--teal); transform: translateY(-1px); }
+.week-nav button:focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; }
+
 .poster-grid { display: grid; grid-template-columns: 250px minmax(590px,1fr) 320px; gap: 14px; position: relative; z-index: 2; padding: 0 22px 18px; }
 .principles, .day-panel, .night-panel { min-width: 0; }
 .principles { padding-top: 4px; }
@@ -86,7 +100,7 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round
 .row-time, .row-end { color: var(--navy); font-size: .68rem; font-weight: 850; text-align: center; text-transform: uppercase; }
 .row-time strong, .row-end { font-size: 1.08rem; }
 .row-time span, .row-end span { display: block; font-size: .58rem; }
-.row-cycle { display: grid; grid-template-columns: 29% 29% 42%; min-width: 0; height: 92px; overflow: hidden; border-radius: 46px; box-shadow: inset 0 0 0 1px rgba(20,43,58,.09); }
+.row-cycle { display: flex; min-width: 0; height: 92px; overflow: hidden; border-radius: 46px; box-shadow: inset 0 0 0 1px rgba(20,43,58,.09); }
 .segment { display: flex; align-items: center; min-width: 0; padding: 10px 12px; }
 .segment svg { flex: 0 0 31px; width: 31px; height: 31px; margin-right: 7px; padding: 5px; border-radius: 50%; color: var(--navy); background: rgba(255,255,255,.55); }
 .segment p { min-width: 0; margin: 0; line-height: 1.08; }
@@ -94,7 +108,9 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round
 .segment span { display: block; margin-top: 4px; font-size: clamp(.49rem,.65vw,.64rem); font-weight: 750; line-height: 1.15; text-transform: uppercase; }
 .feed-segment { color: var(--white); background: var(--green); }
 .care-segment { background: var(--orange); }
+.awake-segment { background: var(--orange); }
 .sleep-segment { background: var(--blue); }
+.routine-segment { background: var(--yellow); }
 .evening-row .care-segment { background: var(--yellow); }
 .evening-row .sleep-segment { color: var(--white); background: #48a8cf; }
 
@@ -169,7 +185,7 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round
   .repeat-line i:first-of-type, .repeat-line span:last-child { display: none; }
   .schedule-row { grid-template-columns: 38px minmax(0,1fr); gap: 5px; }
   .row-end { display: none; }
-  .row-cycle { grid-template-columns: 31% 29% 40%; height: 78px; }
+  .row-cycle { height: 78px; }
   .segment { justify-content: center; padding: 7px 5px; text-align: center; }
   .segment svg { display: none; }
   .segment strong { font-size: .72rem; }
